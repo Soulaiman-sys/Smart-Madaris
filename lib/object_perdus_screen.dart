@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:smart_madaris/object_perdu_form.dart';
+import 'package:smart_madaris/screen_ui_template.dart';
 
 class ObjectPerdusScreen extends StatelessWidget {
   const ObjectPerdusScreen({super.key});
@@ -41,44 +43,59 @@ class GalleryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(6),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.15),
-            blurRadius: 6,
-            offset: const Offset(0, 3),
+    return InkWell(
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (ctx) => ScreenUiTemplate(
+              screenTitle: "Object perdu",
+              body: ObjectPerduFormScreen(image: image, date: date),
+            ),
           ),
-        ],
-      ),
-      child: Column(
-        children: [
-          /// IMAGE
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(8),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(4),
-                child: Image.network(
-                  image,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
+        );
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(6),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.15),
+              blurRadius: 6,
+              offset: const Offset(0, 3),
+            ),
+          ],
+        ),
+        child: Column(
+          children: [
+            /// IMAGE
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(8),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(4),
+                  child: Image.network(
+                    image,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
-          ),
 
-          /// DATE
-          Padding(
-            padding: const EdgeInsets.only(bottom: 10),
-            child: Text(
-              date,
-              style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w500),
+            /// DATE
+            Padding(
+              padding: const EdgeInsets.only(bottom: 10),
+              child: Text(
+                date,
+                style: const TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

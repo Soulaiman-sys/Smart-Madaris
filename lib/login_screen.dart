@@ -74,6 +74,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: TextButton(
                     onPressed: () {
                       // TODO: Gérer la logique de mot de passe oublié
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (builder) => LoginScreen()),
+                      );
                     },
                     style: TextButton.styleFrom(
                       padding: EdgeInsets.zero,

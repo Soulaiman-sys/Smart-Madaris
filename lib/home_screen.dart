@@ -10,6 +10,7 @@ import 'package:smart_madaris/performance_screen.dart';
 import 'package:smart_madaris/photocopy_screen.dart';
 import 'package:smart_madaris/screen_ui_template.dart';
 import 'package:smart_madaris/student_form_screen.dart';
+import 'package:smart_madaris/vacantaire.dart';
 
 import 'absence_screen.dart';
 
@@ -68,24 +69,24 @@ class HomeScreen extends StatelessWidget {
         'screen': ObjectPerdusScreen(),
       },
       {
-        'icon': 'assets/images/perdus.png',
+        'icon': 'assets/images/demande.png',
         'label': 'Demande',
         'screen': DemandeScreen(),
       },
       {
-        'icon': 'assets/images/perdus.png',
+        'icon': 'assets/images/photocopy.png',
         'label': 'Photocopy',
         'screen': PhotocopyScreen(),
       },
       {
-        'icon': 'assets/images/perdus.png',
+        'icon': 'assets/images/vacantaire.png',
         'label': 'Vacantaire',
-        'screen': ObjectPerdusScreen(),
+        'screen': VacataireScreen(),
       },
       {
-        'icon': 'assets/images/perdus.png',
+        'icon': 'assets/images/rapport.png',
         'label': 'Rapport',
-        'screen': ObjectPerdusScreen(),
+        'screen': PhotocopyScreen(),
       },
     ];
 
